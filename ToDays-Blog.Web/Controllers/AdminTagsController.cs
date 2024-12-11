@@ -7,10 +7,10 @@ namespace ToDays_Blog.Web.Controllers
 {
     public class AdminTagsController : Controller
     {
-        private BlogDbContext _blogDbContext;
-        public AdminTagsController(BlogDbContext blogDbContext) 
+        private BlogDbContext blogDbContext;
+        public AdminTagsController(BlogDbContext newBlogDbContext) 
         {
-            blogDbContext = _blogDbContext;
+            blogDbContext = newBlogDbContext;
         }
         public IActionResult Add()
         {
@@ -25,8 +25,8 @@ namespace ToDays_Blog.Web.Controllers
                 Name = addTagRequest.Name,
                 DisplayName = addTagRequest.DisplayName 
             };
-            _blogDbContext.Tags.Add(tag);
-            _blogDbContext.SaveChanges();
+            blogDbContext.Tags.Add(tag);
+            blogDbContext.SaveChanges();
             return View("Add");
         }
         public IActionResult Edit()
