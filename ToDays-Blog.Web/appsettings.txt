@@ -1,0 +1,12 @@
+!!!! DONT FORGET TO ADD YOUR CONN STRING AND CHANGE FROM .TXT TO .JSON !!!!
+
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+    "AllowedHosts": "*",
+    "ConnectionStrings": { "ToDaysBlogConnString": "Server=XXXXX;Database=ToDaysBlogDb;Trusted_Connection=True;TrustServerCertificate=True;" }
+}
